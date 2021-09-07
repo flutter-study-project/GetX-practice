@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_practice/src/home.dart';
+import 'package:getx_practice/src/pages/named/named_first.dart';
+import 'package:getx_practice/src/pages/named/named_second.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +17,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      // home: Home(),
+      initialRoute: "/",
+      // routes: {
+      //   "/": (context) => Home(),
+      //   "/first": (context) => NamedFirstPage(),
+      //   "/second": (context) => NamedSecondPage()
+      // },
+      getPages: [
+        GetPage(name: "/", page: () => Home()),
+        GetPage(name: "/first", page: () => NamedFirstPage()),
+        GetPage(name: "/second", page: () => NamedSecondPage())
+      ],
     );
   }
 }
