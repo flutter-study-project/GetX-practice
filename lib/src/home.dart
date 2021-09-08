@@ -24,10 +24,27 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   Get.toNamed("/first");
                 },
-                child: Text('Named 라우트'))
+                child: Text('Named 라우트')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed("/next", arguments: User(age: 32, name: "name"));
+                },
+                child: Text('Arguments 전달')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.toNamed("/user/123?name=개남&age=22");
+                },
+                child: Text('동적 URL'))
           ],
         ),
       ),
     );
   }
+}
+
+class User {
+  String name;
+  int age;
+
+  User({required this.age, required this.name});
 }

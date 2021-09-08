@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_practice/src/home.dart';
 
-class NamedFirstPage extends StatelessWidget {
-  const NamedFirstPage({Key? key}) : super(key: key);
+class NextPage extends StatelessWidget {
+  const NextPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Named First Page')),
+      appBar: AppBar(title: Text('Next Page')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text("${(Get.arguments as User).name}"),
             ElevatedButton(
                 onPressed: () {
-                  Get.offNamed("/second");
+                  Get.offAll(() => Home());
                 },
-                child: Text('두 번째 네임드 페이지로 이동'))
+                child: Text('홈으로 이동'))
           ],
         ),
       ),
