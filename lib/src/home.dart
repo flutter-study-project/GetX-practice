@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_practice/src/pages/normal/first.dart';
+import 'package:getx_practice/src/pages/reactive_state_manage.dart';
 import 'package:getx_practice/src/pages/simple_state_manage.dart';
 
 class Home extends StatelessWidget {
@@ -40,7 +41,12 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   Get.to(() => SimpleStateManagePage());
                 },
-                child: Text('단순상태관리'))
+                child: Text('단순상태관리')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(() => ReactiveStateManagePage());
+                },
+                child: Text('반응형 상태관리'))
           ],
         ),
       ),
