@@ -35,6 +35,17 @@ class WithGetX extends StatelessWidget {
                 style: TextStyle(fontSize: 50),
               );
             }),
+        ElevatedButton(
+            onPressed: () {
+              // 1 번 방법
+              // Get.find<CountConrollerWithGetX>().increase();
+              //
+              _countConrollerWithGetX.putNumber(5, "second");
+            },
+            child: Text(
+              "5로 변경",
+              style: TextStyle(fontSize: 20),
+            )),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
