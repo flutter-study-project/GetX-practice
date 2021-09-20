@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_practice/src/binding/binding_page.dart';
+import 'package:getx_practice/src/controller/count_controller_with_getx.dart';
 import 'package:getx_practice/src/home.dart';
+import 'package:getx_practice/src/pages/binding.dart';
 import 'package:getx_practice/src/pages/named/named_first.dart';
 import 'package:getx_practice/src/pages/named/named_second.dart';
 import 'package:getx_practice/src/pages/next.dart';
@@ -28,7 +31,9 @@ class MyApp extends StatelessWidget {
         GetPage(
             name: "/second", page: () => NamedSecondPage(), transition: Transition.zoom),
         GetPage(name: "/next", page: () => NextPage()),
-        GetPage(name: "/user/:uid", page: () => UserPage())
+        GetPage(name: "/user/:uid", page: () => UserPage()),
+        GetPage(
+            name: "/binding", page: () => BindingPage(), binding: BindingPageBinding())
       ],
     );
   }
