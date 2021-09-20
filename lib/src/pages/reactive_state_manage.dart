@@ -7,7 +7,7 @@ class ReactiveStateManagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CountControllerWithReactive());
+    Get.put(CountControllerWithReactive());
 
     return Scaffold(
         appBar: AppBar(title: Text("반응형 상태관리")),
