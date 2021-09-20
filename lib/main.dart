@@ -4,13 +4,19 @@ import 'package:getx_practice/src/binding/binding_page.dart';
 import 'package:getx_practice/src/controller/count_controller_with_getx.dart';
 import 'package:getx_practice/src/home.dart';
 import 'package:getx_practice/src/pages/binding.dart';
+import 'package:getx_practice/src/pages/getx_service.dart';
 import 'package:getx_practice/src/pages/named/named_first.dart';
 import 'package:getx_practice/src/pages/named/named_second.dart';
 import 'package:getx_practice/src/pages/next.dart';
 import 'package:getx_practice/src/pages/user.dart';
 
 void main() {
+  initService();
   runApp(MyApp());
+}
+
+void initService() {
+  Get.put(CountConrollerWithGetX(), permanent: true);
 }
 
 class MyApp extends StatelessWidget {
@@ -33,7 +39,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/next", page: () => NextPage()),
         GetPage(name: "/user/:uid", page: () => UserPage()),
         GetPage(
-            name: "/binding", page: () => BindingPage(), binding: BindingPageBinding())
+            name: "/binding", page: () => BindingPage(), binding: BindingPageBinding()),
+        GetPage(name: "/get_service", page: () => GetXServicePage())
       ],
     );
   }

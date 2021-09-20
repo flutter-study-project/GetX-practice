@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_practice/src/controller/getx_service_test.dart';
 import 'package:getx_practice/src/pages/dependencies/dependency_manage_page.dart';
+import 'package:getx_practice/src/pages/getx_service.dart';
 import 'package:getx_practice/src/pages/normal/first.dart';
 import 'package:getx_practice/src/pages/reactive_state_manage.dart';
 import 'package:getx_practice/src/pages/simple_state_manage.dart';
@@ -57,7 +59,14 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   Get.toNamed("/binding");
                 },
-                child: Text('바인딩'))
+                child: Text('바인딩')),
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(() => GetXServicePage(),
+                      binding:
+                          BindingsBuilder(() => Get.lazyPut(() => GetxServiceTest())));
+                },
+                child: Text('GetX Service'))
           ],
         ),
       ),
